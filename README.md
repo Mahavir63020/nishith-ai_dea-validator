@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @Mahavir63020
-- 👀 I’m interested in Data Science and Front-End Development
-- 🌱 I’m currently learning Fron-end Development
-- 💞️ I’m looking to collaborate on Data Science
+- 👀 I’m interested in Artificial Intelligence and Front-End Development
+- 🌱 I’m currently learning Fron-end Development and Gen AI
+- 💞️ I’m looking to collaborate on AI
 - 📫 How to reach me Mail me on nishithdesstti@gmail.com
 
 <!---
