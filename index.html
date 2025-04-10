@@ -847,7 +847,7 @@ Industry: ${industry}
     document.getElementById('difficulty-content').innerHTML = formatMarkdown(sections['difficulty'] || '');
 
     // ✅ Save everything to 1 Google Sheet row
-    await fetch("https://api.sheety.co/d8baae57a0cecdf9368278a47149b64d/validationIdeaDataStorage/responses", {
+    await fetch("https://api.sheety.co/d8baae57a0cecdf9368278a47149b64d/validationIdeaDataStorage/sheet1", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
