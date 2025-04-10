@@ -874,7 +874,6 @@ Industry: ${industry}
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-        // ⛔ REMOVE the Authorization header from frontend
       },
       body: JSON.stringify({
         model: "openai/gpt-4o-mini",
@@ -884,12 +883,33 @@ Industry: ${industry}
     });
 
     const data = await response.json();
-    return data.choices[0].message.content;
+    const aiResponse = data.choices[0].message.content;
+
+    // ✅ Save to Sheety here
+    const timestamp = new Date().toISOString();
+    await fetch("https://api.sheety.co/d8baae57a0cecdf9368278a47149b64d/validationIdeaDataStorage/sheet1", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        sheet1: {
+          Timestamp: timestamp,
+          Prompt: prompt,
+          Response: aiResponse
+        }
+      })
+    });
+
+    // ✅ Return AI response to the UI
+    return aiResponse;
+
   } catch (error) {
     console.error("Error calling API:", error);
     return "An error occurred while processing your request.";
   }
 }
+
 
 </script>
 
